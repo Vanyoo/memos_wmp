@@ -355,14 +355,16 @@ Page({
     let id = memoid
     var that = this
     app.api.editMemo(this.data.url, id, {
-        visibility: (visibility == 'PRIVATE' ? 'PUBLIC' : 'PRIVATE')
+        //visibility: (visibility == 'PRIVATE' ? 'PUBLIC' : 'PRIVATE')
+        visibility: (visibility == 'PRIVATE' ? 'PROTECTED' : 'PRIVATE')
       })
       .then(res => {
         if (res) {
           var memos = that.data.memos
           for (let i = 0; i < memos.length; i++) {
             if (memos[i].id == id) {
-              memos[i].visibility = (memos[i].visibility == 'PRIVATE' ? 'PUBLIC' : 'PRIVATE')
+              //memos[i].visibility = (memos[i].visibility == 'PRIVATE' ? 'PUBLIC' : 'PRIVATE')
+              memos[i].visibility = (memos[i].visibility == 'PRIVATE' ? 'PROTECTED' : 'PRIVATE')
             }
           }
           that.setData({
@@ -477,10 +479,12 @@ Page({
       }
     } else if (item.key == "memo-visibility") {
       if (item.value == "\"PRIVATE\"") {
-        item.value = "\"PUBLIC\""
+        //item.value = "\"PUBLIC\""
+        item.value = "\"PROTECTED\""
         for (let i = 0; i < me.userSettingList.length; i++) {
           if (me.userSettingList[i].key == 'memo-visibility') {
-            me.userSettingList[i].value = "\"PUBLIC\""
+            //me.userSettingList[i].value = "\"PUBLIC\""
+            me.userSettingList[i].value = "\"PROTECTED\""
           }
         }
       } else {

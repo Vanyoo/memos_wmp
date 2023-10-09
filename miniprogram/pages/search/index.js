@@ -270,13 +270,15 @@ Page({
     let memos = app.deepCopy(this.data.memos)
     let showMemos = app.deepCopy(this.data.showMemos)
     app.api.editMemo(this.data.url, id, {
-        visibility: (visibility == 'PRIVATE' ? 'PUBLIC' : 'PRIVATE')
+        //visibility: (visibility == 'PRIVATE' ? 'PUBLIC' : 'PRIVATE')
+        visibility: (visibility == 'PRIVATE' ? 'PROTECTED' : 'PRIVATE')
       })
       .then(res => {
         if (res) {
           for (let i = 0; i < memos.length; i++) {
             if (memos[i].id == id) {
-              memos[i].visibility = (memos[i].visibility == 'PRIVATE' ? 'PUBLIC' : 'PRIVATE')
+              //memos[i].visibility = (memos[i].visibility == 'PRIVATE' ? 'PUBLIC' : 'PRIVATE')
+              memos[i].visibility = (memos[i].visibility == 'PRIVATE' ? 'PROTECTED' : 'PRIVATE')
             }
           }
 

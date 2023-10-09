@@ -9,7 +9,8 @@
   <view class="headerBtns" wx:if="{{me && me.id == memo.creatorId && !mpCodeMode}}">
     <view class="notice {{memo.visibility === 'PRIVATE' ? '' : 'active'}}" bind:tap="changeMemoVisibility">
       <view class="{{memo.visibility === 'PRIVATE' ? 'eyeCloseIcon' : 'eyeIcon'}}"></view>
-      <text>{{memo.visibility === 'PRIVATE' ? language.memo.private : language.memo.public}}</text>
+      <!--text>{{memo.visibility === 'PRIVATE' ? language.memo.private : language.memo.public}}</text-->
+      <text>{{memo.visibility === 'PRIVATE' ? language.memo.private : language.memo.protected}}</text>
     </view>
   </view>
 

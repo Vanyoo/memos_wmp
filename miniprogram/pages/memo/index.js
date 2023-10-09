@@ -250,12 +250,14 @@ Page({
       type: 'light'
     })
     app.api.editMemo(this.data.url, memoid, {
-        visibility: (visibility == 'PRIVATE' ? 'PUBLIC' : 'PRIVATE')
+        //visibility: (visibility == 'PRIVATE' ? 'PUBLIC' : 'PRIVATE')
+        visibility: (visibility == 'PRIVATE' ? 'PROTECTED' : 'PRIVATE')
       })
       .then(res => {
         if (res) {
           that.setData({
-            ['memo.visibility']: visibility == 'PRIVATE' ? 'PUBLIC' : 'PRIVATE'
+            //['memo.visibility']: visibility == 'PRIVATE' ? 'PUBLIC' : 'PRIVATE'
+            ['memo.visibility']: visibility == 'PRIVATE' ? 'PROTECTED' : 'PRIVATE'
           })
         }
       })

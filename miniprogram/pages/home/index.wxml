@@ -127,9 +127,9 @@
     <!-- <navigator url="../openapi/index" class="openWeview">
       {{language.home.sideBar.goOpenAPI}}
     </navigator> -->
-    <navigator url="../others/index" class="archived">
+    <!--navigator url="../others/index" class="archived">
       {{language.home.sideBar.goOthers}}
-    </navigator>
+    </navigator-->
     <view class="archived" bindtap="goWelcom">
       {{language.home.sideBar.goWelcom}}
     </view>
